@@ -67,9 +67,15 @@ Either way, open the `.png` the run names under `results/julia/figures/` or `res
 
 The committed regimes are named parameter files under `problems/` at the repository root, so a run is reproduced by name rather than by retyping flags:
 
-    julia --project=Julia Julia/run.jl --problem barrier        # Julia
-    python3 Python/run.py --problem barrier                  # Python
-    python3 Python/run.py --problem all                      # every instance
+Julia, one instance and every instance:
+
+    julia --project=Julia Julia/run.jl --problem barrier
+    julia --project=Julia Julia/run.jl --problem all
+
+Python:
+
+    python3 Python/run.py --problem barrier
+    python3 Python/run.py --problem all
 
 | instance | parameters | what it shows |
 |---|---|---|
@@ -81,9 +87,8 @@ The committed regimes are named parameter files under `problems/` at the reposit
 A TOML file names a run completely: the model, its parameters, the observable kind, and the engines. A new instance is a copy of an existing file with the values changed, runnable from either pipeline:
 
     cp problems/manna_small.toml problems/manna_ring8.toml
-    # edit name, sites, grains, and smax in the copy; the output tag is
-    # built from the name field, so an unchanged name overwrites the
-    # original instance's files
+
+Edit `name`, `sites`, `grains`, and `smax` in the copy before running it; the output tag is built from the `name` field, so an unchanged name overwrites the original instance's files.
 
 The loader validates strictly: a misspelled or unknown field errors with a message naming the field and the allowed set, rather than running with a wrong default.
 
@@ -112,8 +117,13 @@ Parameters come from one of three places: the defaults built into the entry poin
 
 Every parameter flag takes one or more values, and a flag given several values repeats the run over every combination in one invocation, so a sweep is one command rather than a shell loop:
 
-    julia --project=Julia Julia/run.jl --kind manna_avalanche --sites 4 5 6 --grains 3    # Julia
-    python3 Python/run.py --kind manna_avalanche --sites 4 5 6 --grains 3              # Python
+Julia:
+
+    julia --project=Julia Julia/run.jl --kind manna_avalanche --sites 4 5 6 --grains 3
+
+Python:
+
+    python3 Python/run.py --kind manna_avalanche --sites 4 5 6 --grains 3
 
 Output tags are built from the fields the run kind reads, so no two combinations collide on a filename. A long sweep can be detached and stopped from the shell; the Python form is the same with `python3 Python/run.py`:
 
