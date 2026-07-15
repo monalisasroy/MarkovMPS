@@ -1,0 +1,16 @@
+# Biased walk between two absorbing barriers: survival curve against the
+# closed spectral form. The headline first-passage run.
+name = "barrier"
+kind = "barrier_survival"
+nbits = 4
+rate_up = 1.3
+rate_down = 0.7
+start = 5
+tmax = 6.0
+tpoints = 25
+nshots = 4000
+seed = 1
+maxdim = 64
+cutoff = 1e-10
+engines = ["exact", "kmc", "tt"]
+output = "results"

@@ -1,0 +1,14 @@
+# Mean first-passage time of a downward-biased walk: one linear solve
+# against the gambler's ruin closed form and a sampled mean.
+name = "barrier_mfpt"
+kind = "barrier_mfpt"
+nbits = 5
+rate_up = 0.8
+rate_down = 1.1
+start = 12
+nshots = 4000
+seed = 1
+maxdim = 64
+cutoff = 1e-10
+engines = ["exact", "kmc", "tt"]
+output = "results"

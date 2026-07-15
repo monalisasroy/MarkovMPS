@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If this software contributes to published work, cite it as below."
+title: "MarkovMPS: tensor-train propagators for classical Markov generators"
+authors:
+  - family-names: "Singh Roy"
+    given-names: "Monalisa"
+version: 1.0.0
+date-released: 2026-07-12
+repository-code: "https://github.com/monalisasroy/MarkovMPS"
+license: Apache-2.0

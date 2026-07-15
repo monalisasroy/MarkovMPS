@@ -1,0 +1,15 @@
+# Manna sandpile on a 4-site ring, 3 grains: the avalanche-size
+# distribution from all 3 engines, including the machine-precision tail
+# of the exact embedded chain and the Fourier-inverted tensor-train
+# generating function.
+name = "manna_small"
+kind = "manna_avalanche"
+sites = 4
+grains = 3
+smax = 24
+nshots = 4000
+seed = 1
+maxdim = 48
+cutoff = 1e-10
+engines = ["exact", "kmc", "tt"]
+output = "results"

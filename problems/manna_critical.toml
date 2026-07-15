@@ -1,0 +1,15 @@
+# Manna sandpile on a 24-site ring at grain density 0.875, approaching the
+# conserved-class critical density near 0.89 from below. The state space
+# is beyond the dense engine and the solve ranks grow with the correlation
+# length, so this instance runs kinetic Monte Carlo alone: the stated
+# boundary of the package, where sampling reaches what the tensor train
+# does not.
+name = "manna_critical"
+kind = "manna_avalanche"
+sites = 24
+grains = 21
+smax = 400
+nshots = 4000
+seed = 1
+engines = ["kmc"]
+output = "results"
