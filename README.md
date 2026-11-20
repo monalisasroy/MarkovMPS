@@ -4,7 +4,7 @@ A solver for continuous-time Markov processes on a lattice, computing first-pass
 
 Two problem families are included. The biased walk between absorbing barriers covers the first-passage observables; the Manna fixed-energy sandpile covers the avalanche observables, with its conserved grain number entering as a diagonal sector projector. The package is provided as two independent pipelines, a Julia package under [Julia/](Julia/) and a Python package under [Python/](Python/), with the same structure and conventions; every step below gives the command for each. The problem instances under `problems/`, the design documents under `docs/`, and the runtime output under `results/` are shared and live at the repository root.
 
-![A random walk hitting a boundary, and an avalanche spreading across a sandpile](docs/assets/hero.png)
+![Random walks, each run until it first reaches a barrier, and avalanches on a sandpile, with the arrival times and avalanche sizes collecting below](docs/assets/hero.gif)
 
 ## Install
 
