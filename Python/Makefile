@@ -12,7 +12,4 @@ test:
 run:
 	$(PYTHON) run.py --problem all
 
-hero:
-	$(PYTHON) tools/make_hero.py
-
-.PHONY: install test run hero
+.PHONY: install test run
